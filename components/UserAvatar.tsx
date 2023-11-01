@@ -7,9 +7,9 @@ export function UserAvatar({
   profileImage,
   className,
 }: {
-  name: string;
-  profileImage: string;
-  className?: string;
+  name?: string | null;
+  profileImage?: string | null;
+  className?: string ;
 }) {
   return (
     <Avatar className={cn("bg-white text-black", className)}>
@@ -18,7 +18,7 @@ export function UserAvatar({
           src={profileImage}
           width={40}
           height={40}
-          alt={name}
+          alt={name || "User profile"}
           className="rounded-full"
         />
       )}
