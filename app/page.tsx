@@ -1,8 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import giftImage from "@/images/CTlogo.png";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/auth";
 
-const Home = () => {
+const Home = async () => {
+  const session = await getServerSession(authOptions)
+  console.log(session)
+
+  
   return (
     <main>
       <div className="relative isolate pt-14 dark:bg-gray-900">
